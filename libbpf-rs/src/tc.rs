@@ -47,8 +47,8 @@ impl TcHook {
             opts: libbpf_sys::bpf_tc_opts::default(),
         };
 
-        tc_hook.hook.sz = std::mem::size_of::<libbpf_sys::bpf_tc_hook>() as u64;
-        tc_hook.opts.sz = std::mem::size_of::<libbpf_sys::bpf_tc_opts>() as u64;
+        tc_hook.hook.sz = std::mem::size_of::<libbpf_sys::bpf_tc_hook>() as usize;
+        tc_hook.opts.sz = std::mem::size_of::<libbpf_sys::bpf_tc_opts>() as usize;
         tc_hook.opts.prog_fd = fd;
 
         tc_hook
